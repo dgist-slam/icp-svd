@@ -9,7 +9,7 @@ export default function ImageWindow({ frame, vizData, frameIdx }) {
       <div className="img-label">
         Frame #{frame.scanIndex} — {frame.elapsed.toFixed(1)}s
       </div>
-      <img src={`/${image}`} alt={`Frame ${frame.scanIndex}`} />
+      <img src={`${import.meta.env.BASE_URL}${image}`} alt={`Frame ${frame.scanIndex}`} />
     </div>
   )
 }
