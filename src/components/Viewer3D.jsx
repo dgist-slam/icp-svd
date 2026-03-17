@@ -11,7 +11,7 @@ export default function Viewer3D({
   showGtMap, showIcpMap, showGtTraj, showIcpTraj,
   showCorrespondences, corrData, corrDistThreshold,
   showQueryScan, showTargetScan, scanPointSize,
-  pointSize, pointOpacity,
+  pointSize, pointOpacity, trajLineWidth,
 }) {
   // Camera target: center of GT trajectory (all frames, normalized)
   const center = useMemo(() => {
@@ -85,6 +85,7 @@ export default function Viewer3D({
           frameIdx={frameIdx}
           poseKey="gtPose"
           color="#5588ff"
+          lineWidth={trajLineWidth}
         />
       )}
 
@@ -95,6 +96,7 @@ export default function Viewer3D({
           frameIdx={frameIdx}
           poseKey="icpPose"
           color="#ffaa44"
+          lineWidth={trajLineWidth}
         />
       )}
 

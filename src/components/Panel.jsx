@@ -15,6 +15,7 @@ export default function Panel({
   showQueryScan, setShowQueryScan, showTargetScan, setShowTargetScan,
   scanPointSize, setScanPointSize,
   pointSize, setPointSize, pointOpacity, setPointOpacity,
+  trajLineWidth, setTrajLineWidth,
 }) {
   const drift = poseDist(currentFrame?.gtPose, currentFrame?.icpPose)
   const lastFrame = icpFrames[icpFrames.length - 1]
@@ -110,6 +111,11 @@ export default function Panel({
           <label>Opacity: {pointOpacity.toFixed(2)}</label>
           <input type="range" min={0.1} max={1} step={0.05}
             value={pointOpacity} onChange={e => setPointOpacity(Number(e.target.value))} />
+        </div>
+        <div className="ctrl">
+          <label>Traj Line Width: {trajLineWidth.toFixed(1)}</label>
+          <input type="range" min={1} max={10} step={0.5}
+            value={trajLineWidth} onChange={e => setTrajLineWidth(Number(e.target.value))} />
         </div>
       </div>
 

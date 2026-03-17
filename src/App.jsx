@@ -41,6 +41,7 @@ export default function App() {
   const [showQueryScan, setShowQueryScan] = useState(true)
   const [showTargetScan, setShowTargetScan] = useState(true)
   const [scanPointSize, setScanPointSize] = useState(4.0)
+  const [trajLineWidth, setTrajLineWidth] = useState(3)
 
   // Load data on mount
   useEffect(() => {
@@ -226,6 +227,7 @@ export default function App() {
         scanPointSize={scanPointSize} setScanPointSize={setScanPointSize}
         pointSize={pointSize} setPointSize={setPointSize}
         pointOpacity={pointOpacity} setPointOpacity={setPointOpacity}
+        trajLineWidth={trajLineWidth} setTrajLineWidth={setTrajLineWidth}
       />
       <div className="canvas-wrap">
         <Viewer3D
@@ -244,6 +246,7 @@ export default function App() {
           scanPointSize={scanPointSize}
           pointSize={pointSize}
           pointOpacity={pointOpacity}
+          trajLineWidth={trajLineWidth}
         />
         <ImageWindow frame={currentFrame} vizData={vizData} frameIdx={frameIdx} />
       </div>

@@ -10,7 +10,7 @@ extend({ Line2, LineMaterial, LineGeometry })
 /**
  * Renders the trajectory line and current pose marker
  */
-export default function Trajectory({ frames, frameIdx, poseKey, color }) {
+export default function Trajectory({ frames, frameIdx, poseKey, color, lineWidth = 3 }) {
   const { size } = useThree()
 
   const { lineGeometry, currentPos } = useMemo(() => {
@@ -38,7 +38,7 @@ export default function Trajectory({ frames, frameIdx, poseKey, color }) {
       <line2 geometry={lineGeometry}>
         <lineMaterial
           color={color}
-          linewidth={3}
+          linewidth={lineWidth}
           resolution={[size.width, size.height]}
         />
       </line2>
